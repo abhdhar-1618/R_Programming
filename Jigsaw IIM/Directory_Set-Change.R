@@ -1,0 +1,6 @@
+print("Hello World..!")
+setwd("E:/Main/IPBA Jigsaw Docs/R_Data") 
+getwd()
+library(datasets)
+data()
+any(grepl("dplyr",installed.packages()))
