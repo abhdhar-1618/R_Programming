@@ -1,0 +1,49 @@
+a=read.csv("E:\\Main\\IPBA Jigsaw Docs\\Live Class Study Materials\\8-JAN-2022\\Butler.csv")
+a
+nrow(a)
+ncol(a)
+a=a[,c(-4,-5)]
+a
+
+x=a[,2]
+y=a[,3]
+
+x
+y
+
+n=nrow(a)
+
+sum1=0
+sum2=0
+
+for(i in 1:n)
+  
+{
+  sum1=sum1+(x[i]-mean(x))*(y[i]-mean(y))
+  sum2=sum2+sum2+(x[i]-mean(x))^2
+  
+}
+
+beta=sum1/sum2
+beta
+
+alpha=mean(y)-beta*mean(x)
+alpha
+
+a
+
+fit1=lm(Sales~Population, data=a)
+summary(fit1)
+
+new_data=data.frame(Population=21)
+predict(fit1, new_data, interval = c("prediction"), level=0.95)
+
+------------------------END------------------------------------------------------
+
+a=read.csv("E:\\Main\\IPBA Jigsaw Docs\\Live Class Study Materials\\8-JAN-2022\\Butler.csv")
+a
+nrow(a)
+ncol(a)
+
+b=lm(Time~Miles+Deliveries, data = a)
+summary(b)
